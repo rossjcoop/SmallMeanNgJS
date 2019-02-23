@@ -8,5 +8,9 @@ meanApp.config(function ($routeProvider) {
         });
 });
 meanApp.controller('appCtrl', function() {
+    var app = this;
 
+    app.submit = function(){
+
+    };
 });
