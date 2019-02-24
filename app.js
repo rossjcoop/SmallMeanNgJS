@@ -1,4 +1,4 @@
-var meanApp = angular.module('meanApp', ['ngRoute']);
+const meanApp = angular.module('meanApp', ['ngRoute']);
 
 meanApp.config(function ($routeProvider) {
     $routeProvider
@@ -7,12 +7,15 @@ meanApp.config(function ($routeProvider) {
             controller: 'appCtrl'
         });
 });
+
 meanApp.controller('appCtrl', function($http) {
-    var app = this;
-    var url = "http://localhost:3000";
+    let app = this;
+    const url = "http://localhost:3000";
+
+    app.thingsFromMongo = [];
 
     app.submit = function(thing){
-        $http.post(url + $/add, {thing: thing})
-
+        $http.post(url + "/add", {thing: thing});
+        app.thing = "";
     };
 });

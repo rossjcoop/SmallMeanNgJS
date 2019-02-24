@@ -2,7 +2,7 @@
   "name": "mean_ngjs",
   "version": "1.0.0",
   "description": "Starter project with MEAN using NgJS",
-  "main": "index.js",
+  "main": "server.js",
   "dependencies": {
     "angular": "^1.7.7",
     "angular-route": "^1.7.7",

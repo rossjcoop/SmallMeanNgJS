@@ -13,11 +13,16 @@ mongoose.connect("mongodb://localhost:27017/meanpractice");
 
 let thingModel = mongoose.model('thing', {thing: String});
 
+app.get('/', (req, res) => {
+    thingModel.find((err, things) => {
+        res.send(things);
+    });
+});
 
 app.post('/add', (req, res) => {
     let thing = req.body.thing;
     let thingDoc = new thingModel({thing: thing});
-    thing.Doc.save(()=> {
+    thingDoc.save(()=> {
         res.send();
     });
 });
