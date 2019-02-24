@@ -7,10 +7,12 @@ meanApp.config(function ($routeProvider) {
             controller: 'appCtrl'
         });
 });
-meanApp.controller('appCtrl', function() {
+meanApp.controller('appCtrl', function($http) {
     var app = this;
+    var url = "http://localhost:3000";
 
-    app.submit = function(){
+    app.submit = function(thing){
+        $http.post(url + $/add, {thing: thing})
 
     };
 });

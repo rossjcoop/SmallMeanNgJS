@@ -7,4 +7,22 @@ const app = express();
 app.use(cors());
 app.use(bodyParser());
 
-mongoose.connect("mongodb://localhost:27017/practice")
+const port = 3000;
+
+mongoose.connect("mongodb://localhost:27017/meanpractice");
+
+let thingModel = mongoose.model('thing', {thing: String});
+
+
+app.post('/add', (req, res) => {
+    let thing = req.body.thing;
+    let thingDoc = new thingModel({thing: thing});
+    thing.Doc.save(()=> {
+        res.send();
+    });
+});
+
+
+app.listen(port, () => {
+    console.log("App is running on port "+port)
+});
