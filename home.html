@@ -1,6 +1,13 @@
 <div>
     <h2>This is one mean tutorial!</h2>
+    <div ng-repeat="thing in app.thingsFromMongo">
+        {{thing}}
+    </div>
 
     <input type="text" ng-model="app.thing"/>
     <button ng-click="app.submit(app.thing)">Submit</button>
+    <button ng-click="app.show()">Show</button>
+
+
+
 </div>

@@ -18,4 +18,10 @@ meanApp.controller('appCtrl', function($http) {
         $http.post(url + "/add", {thing: thing});
         app.thing = "";
     };
+
+    app.show = function() {
+        $http.get(url).then(thing => {
+            app.thingsFromMongo.push(thing);
+        });
+    };
 });
